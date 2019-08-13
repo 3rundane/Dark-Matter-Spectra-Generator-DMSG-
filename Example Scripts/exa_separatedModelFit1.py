@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from lmfit import Model,Parameters,Minimizer,minimize,report_fit
-import Generation,Bin,DistributionsAndRules,DDMGenerationLoops
-import computeSigma as sig
+from DMSG import DMSG_Generation,DMSG_Bin,DMSG_DistributionsAndRules,DMSG_DDMGenerationLoops
+from DMSG import DMSG_computePoissonUncertainty as sig
 import math
-import pieceFileMk2 as pfile
+from TemplateFunctions import temp_templateFunctions as pfile
 import csv
 
 import scipy.optimize as opt
