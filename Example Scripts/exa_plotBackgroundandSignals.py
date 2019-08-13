@@ -4,7 +4,9 @@ import math
 from pylab import *
 import matplotlib.pyplot as plt
 import scipy.optimize as optimize
-from DMSG import DMSG_Generation,DMSG_Start,DMSG_Bin
+from DMSG import DMSG_Generation as Generation
+from DMSG import DMSG_Start as Start
+from DMSG import DMSG_Bin as Bin
 # This file is a script used to compute plots of generated background spectra, generated mock signal events
 # and background spectra + generated mock signal events.
 # This file is organized as follows: first we use the Start "wrapper" to create a new Generation object for plotting uses.

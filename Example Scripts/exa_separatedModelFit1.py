@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from lmfit import Model,Parameters,Minimizer,minimize,report_fit
-from DMSG import DMSG_Generation,DMSG_Bin,DMSG_DistributionsAndRules,DMSG_DDMGenerationLoops
+from DMSG import DMSG_Generation,DMSG_Bin,DMSG_DracoBackground,DMSG_DDMGenerationLoops
 from DMSG import DMSG_computePoissonUncertainty as sig
 import math
 from TemplateFunctions import temp_templateFunctions as pfile
@@ -12,7 +12,7 @@ import scipy.optimize as opt
 
 from collections.abc import Iterable
 
-import Start
+from DMSG import DMSG_Start as Start
 
 # This file contains duplicates of the functions in vectorizedTemplates.py, an example script that fits
 # either the primary energy-derivative photon flux or the secondary energy-derivative photon flux (equations 3.13 and 3.19)
