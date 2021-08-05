@@ -1,2 +1,1 @@
-# DMSGAdventureTime
-This is OFFICIAL(not really) repository for the DDM project
+This project is a tool for generating photon spectra signals given a dark matter input model. Currently the code is setup only to run calculations specific to this paper from Boddy and et al. 	arXiv:1606.07440. Further advances in DMSG will be posted here. 
