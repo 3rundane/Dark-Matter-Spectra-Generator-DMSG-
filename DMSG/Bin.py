@@ -1,5 +1,6 @@
 import math
 import numpy as np
+
 class Bin:
     def __init__(self, width, start, backgroundCounts=0, signalCount=0, totalCount=0):
 
@@ -12,59 +13,55 @@ class Bin:
 
         if self.__signalCount >= self.__backgroundCounts:
             self.__totalCount = signalCount - backgroundCounts
-       # else:
-            #print("Error: backgroundCounts greater than signalCounts")
 
-
-
-    def addBackgroundEvent(self): #unittest
+    def addBackgroundEvent(self):
         self.__backgroundCounts = self.__backgroundCounts + 1
         self.updateTotalCount()
-    def removeBackgroundEvent(self): #unittest
+    def removeBackgroundEvent(self):
         if self.__backgroundCounts > 0:
             self.__backgroundCounts = self.__backgroundCounts - 1
         else:
             print("Count is 0. You cannot have negative counts")
         self.updateTotalCount()
+
     ##Operate on background Counts
-    def setBackgroundCount(self,numBackgroundCounts): #unittest
+    def setBackgroundCount(self,numBackgroundCounts):
         if numBackgroundCounts > 0:
             self.__backgroundCounts = math.floor(numBackgroundCounts)
         self.updateTotalCount()
-    def getBackgroundCount(self): #unittest
+        
+    def getBackgroundCount(self):
         return self.__backgroundCounts
 
     ## Operate on signalCounts
-    def setSignalCount(self,numSignalCounts): #unittest
+    def setSignalCount(self,numSignalCounts):
         if numSignalCounts > 0:
             self.__signalCount = math.floor(numSignalCounts)
 
         self.updateTotalCount()
-    def getSignalCount(self): #unittest
+    def getSignalCount(self):
         # return self.__signalCount
         return np.random.poisson(self.__signalCount)
-    def addSignalCounts(self): #unittest
+
+    def addSignalCounts(self):
         self.__signalCount = self.__signalCount + 1
         self.updateTotalCount()
 
     ## Operate on TotalCount
-    # need to update background and signal count each time one of the methods below are run
-    #you need to code this further Dane.
-    def setTotalCount(self,totalCount): #unittest
+
+    def setTotalCount(self,totalCount):
         if totalCount > 0:
             self.__totalCount = math.floor(totalCount)
-    def getTotalCount(self): #unittest
+
+    def getTotalCount(self):
         return self.__totalCount
-    def addTotalCount(self): #unittest
+
+    def addTotalCount(self):
         self.__totalCount = self.__totalCount + 1
-    def updateTotalCount(self): #unittest
+
+    def updateTotalCount(self):
         if self.__backgroundCounts <= self.__signalCount:
             self.__totalCount = self.__signalCount - self.__backgroundCounts
-        #else:
-            #print('Error: Background count is greater than signalCount')
-
-
-
 
     def acceptEnergy(self,energyToAdd):
         smearedEnergy = self.smearSignal(energyToAdd,0.01)
@@ -73,21 +70,16 @@ class Bin:
         else:
             return False
 
-
-    def getStartingEnergy(self): #unittest
+    def getStartingEnergy(self):
         return self.__binStart
 
-    def getEndingEnergy(self): #unittest
+    def getEndingEnergy(self):
         return self.__binEnd
 
-    def getBinWidth(self): #unittest
+    def getBinWidth(self):
         return self.__binWidth
 
     def smearSignal(self,acceptedEnergy, epsilon):
-        ##does this even do what we want it to do? does it even have the right units?
         smearedSignal = np.random.normal(acceptedEnergy, epsilon * acceptedEnergy)
         return smearedSignal
-
-    # def signalList(self):
-    #     return self.signalList #parantheses self.signalList() or not self.signalList??
 
