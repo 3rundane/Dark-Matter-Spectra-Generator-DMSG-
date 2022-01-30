@@ -5,4 +5,5 @@ DEPENDENCIES:
 2) lmfit
 3) mpmath
 4) scipy
+5) Matplotlib
 
