@@ -1,0 +1,3 @@
+This folder is configured to run DMSG's simulation software and fitting automation to reproduce "Lines and Boxes:
+Unmasking Dynamical Dark Matter through Correlations in the MeV Gamma-Ray Spectrum"
+NOTE THAT IT ASSUMMES ALL DEPENDENCIES HAVE BEEN INSTALLED. 
