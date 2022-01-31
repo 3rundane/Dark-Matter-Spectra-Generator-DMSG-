@@ -32,7 +32,7 @@ class Generation:
     # binWidth is the width of each energy bin. Note that the width of each bin is assumed to be the same for all bins in this code.
     # totalNum is the total number of particles in the ensemble.
     # totalSignals is the total number of signals that we need to generate in order to claim a 5 sigma discovery for a given background.
-    # sqrtSNaught is the center of mass energy of the lightest particle in teh ensemble.
+    # sqrtSNaught is the center of mass energy of the lightest particle in the ensemble.
     # delta is a shape parameter used in equation 2.7 of the line and box paper
     # deltaSSquare is the energy splitting between states, here it is assumed to be a constant.
     # eta is the shape parameter used throughout the line and box paper. I'd list an equation but it's found in so many of them that it would be redundant.
